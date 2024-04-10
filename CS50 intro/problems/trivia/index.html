@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function TurnRed1(color)
+            {
+            document.getElementById('button1').style.backgroundColor = color;
+            document.querySelector("#message").textContent = 'INCORRECT!';
+
+            }
+
+            function TurnRed2(color)
+            {
+            document.getElementById('button2').style.backgroundColor = color;
+            document.querySelector("#message").textContent = 'INCORRECT!';
+
+            }
+            function TurnRed4(color)
+            {
+            document.getElementById('button4').style.backgroundColor = color;
+            document.querySelector("#message").textContent = 'INCORRECT!';
+
+            }
+
+            function TurnRed5(color)
+            {
+            document.getElementById('button5').style.backgroundColor = color;
+            document.querySelector("#message").textContent = 'INCORRECT!';
+            }
+
+            function TurnGreen(color)
+            {
+            document.getElementById('button3').style.backgroundColor = color;
+            document.querySelector("#message").textContent = 'CORRECT!';
+            }
+
+
+
+            function free_response()
+            {
+            let answer = document.querySelector("#free_answer").value
+                if (answer == 'Vienna')
+                {
+                document.getElementById('free_answer').style.backgroundColor = 'green';
+                document.querySelector("#free_message").textContent = 'CORRECT!';
+                }
+                else
+                {
+                document.getElementById('free_answer').style.backgroundColor = 'red';
+                document.querySelector("#free_message").textContent = 'INCORRECT!';                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                    <h3>What medical illness was it postulated that Sergei Rachmaninoff had which enhanced his skills as a pianist?</h3>
+                        <button id="button1" onClick="TurnRed1('red');">Multiple Sclerosis</button>
+                        <button id="button2" onClick="TurnRed2('red');">Tuberculosis</button>
+                        <button id="button3" onClick="TurnGreen('green');">Acromegaly</button>
+                        <button id="button4" onClick="TurnRed4('red');">Pancreatitis</button>
+                        <button id="button5" onClick="TurnRed5('red');">Rheumatoid Arthritis</button>
+                        <p id=message> </p>
+                    <!-- button should turn red if incorrect, and writing 'incorrect' benath the button -->
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                    <h3>What was the capital of the Austro-Hungarian Empire?</h3>
+                        <form onsubmit="free_response(); return false;">
+                            <input name="q" type="text" placeholder="Answer..." id="free_answer">
+                            <input type="submit">
+                            <p id=free_message> </p>
+                        </form>
+
+            </div>
+        </div>
+    </body>
+</html>
